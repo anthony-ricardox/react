@@ -1,0 +1,28 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "esbuild --bundle src/main.jsx --outfile=main.js --servedir=.",
+    "build": "esbuild --bundle src/main.jsx --outfile=main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthony-ricardox/react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anthony-ricardox/react/issues"
+  },
+  "homepage": "https://github.com/anthony-ricardox/react#readme",
+  "dependencies": {
+    "esbuild": "^0.27.3",
+    "npm": "^11.11.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
