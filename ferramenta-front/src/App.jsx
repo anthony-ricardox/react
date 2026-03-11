@@ -1,20 +1,5 @@
-import React from 'react'
+import Ex07 from "./exercicio/ex07"
 
-const titulo = <h1>Esse é um Titulo</h1>
-const styleP = {  
-    color: 'green',
-}
+const App = () => <Ex07 />; // Isso diz: "App é apenas o Ex07"
 
-const App = () => {
-  const random = Math.random() 
-  const ativo = false
-  return (
-  <>
-    {titulo}
-    <p style={styleP}> {new Date().getFullYear() }</p>
-  <p className={ativo ? 'Ativo' : 'Inativo'}>{random * 1}</p>
-  </>)
-}
-    
-
-export default App
+export default App;
