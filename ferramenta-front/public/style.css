@@ -5,6 +5,7 @@ body{
 
 }
 button{ 
+    width: 100px;
     background-color: aquamarine;
     border-radius: 8px;
     padding: 5px;
@@ -13,3 +14,7 @@ button{
 button:hover{   
     background-color: rgb(148, 195, 236);
 }
+footer{ 
+  margin-top: 50px; 
+}
+
