@@ -1,13 +1,16 @@
-import { Target } from 'lucide-react'
+
 import React from 'react'
 
+
 const ex20 = () => {
+  const arraycor = ["Azul","Azul", "Verde","Roxo", "Vermelhor", "Preto"]
+
   const [cores, setCores] = React.useState(['Azul'])
   function handleChange({target}){  
     if(target.checked){ 
         setCores([...cores, target.value])
     }else{
-        setCores(cores.filter((cor) => { cor  !== target.value}))
+        setCores(cores.filter((cor) => {cor !== target.value}))
         
     }
     
@@ -15,15 +18,12 @@ const ex20 = () => {
 
   return (
     <form action="">
-        <label >
-            <input type="checkbox" value='Azul' checked={cores.includes('Azul')} onChange={handleChange} />
-            Azul
-        </label>
+      {arraycor.map((cor, index) => <label key={ index}>
+           <input type="checkbox" value={cor + index} checked={cores.includes(cor + index )} onChange={handleChange} />
+          {cor}
+      </label>)}
 
-         <label >
-            <input type="checkbox" value='Verde' checked={cores.includes('Verde')} onChange={handleChange} />
-            Verde
-        </label>
+       
     </form>
   )
 }
