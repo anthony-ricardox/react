@@ -1,6 +1,15 @@
 import React from "react";
 
-const Input = ({ id, label, value, onChange, ...props }) => {
+const Input = ({
+  id,
+  label,
+  value,
+  onChange,
+  type,
+  placeholder,
+  error,
+  onBlur
+}) => {
   return (
     <div>
       <label htmlFor={id}>{label} </label>
@@ -11,8 +20,11 @@ const Input = ({ id, label, value, onChange, ...props }) => {
         value={value}
         //onChange={({ target }) => setValue(target.value)}
         onChange={onChange}
-        {...props}
+        placeholder={placeholder}
+        onBlur={onBlur}
+        type={type}
       />
+      {error && <p>{error}</p>}
     </div>
   );
 };
