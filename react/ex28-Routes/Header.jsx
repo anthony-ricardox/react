@@ -1,9 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Header.module.css";
 const Header = () => {
   const active = ({ isActive }) => (isActive ? { color: "green" } : {});
+  const location = useLocation()
+ 
+  React.useEffect(()=> {
+    console.log(`Mudou a rota `)
+  }, [location])
   return (
+    
     <nav>
       <NavLink to="/" end style={active}>
         Home
