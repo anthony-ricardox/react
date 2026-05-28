@@ -1,10 +1,12 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Produtos from "./Component/Produtos";
-import Header from "./Component/Header";
-import Footer from "./Component/Footer";
-import Contato from "./Component/Contato";
+
+import Header from "./Component/Header/Header";
+import Footer from "./Component/Footer/Footer";
+import Produtos from "./Component/Produtos/Produtos";
+import Contato from "./Component/Contato/Contato";
+import Produto from "./Component/Produto/Produto";
 
 const App = () => {
   return (
@@ -12,11 +14,11 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <div className="content">
-            <Routes>
-              <Route path="/" element={<Produtos />} />
-              <Route path="contato" element={<Contato />} />
-              
-            </Routes>
+          <Routes>
+            <Route index element={<Produtos />} />
+            <Route path="produto/:id" element={<Produto/>} />
+            <Route path="contato" element={<Contato />} />
+          </Routes>
         </div>
         <Footer />
       </BrowserRouter>

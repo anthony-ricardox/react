@@ -1,31 +1,59 @@
-body{   
-    margin: 2rem;
+body {
+  margin: 2rem;
 }
 
-img{    
-    width: 100%;
-    border-radius: 0.5rem;
+img {
+  width: 100%;
+  border-radius: 0.5rem;
 }
-a{  
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
-h1{
-    font-size: 1.4rem;
+h1 {
+  font-size: 1.4rem;
+}
+
+.App{   
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    margin: 0 auto;
+    min-height: calc(100vh + 10rem);
+}
+
+.content{   
+    flex: 1;
 }
 
 .animeLeft {
-    transform: translateX(-20px);
-    opacity: 0;
-    animation: animeLeft 0.3s ease-out forwards;
-    will-change: transform, opacity;
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: animeLeft 0.3s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 @keyframes animeLeft {
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.loading {
+  
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  border: 20px solid #ccc;
+  border-right-color: transparent;
+  animation: loading 1s linear infinite;
 }
 
 
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
