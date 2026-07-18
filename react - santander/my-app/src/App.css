@@ -14,8 +14,17 @@ body{
   align-items: center;
   text-align: center;
  
-  
-  
 }
 
+.top-sale{
+  padding: 24px;
+  background-color: brown;
+  color: white;
+  border-radius: 8px;
+  margin: 16px;
+}
 
+.top-sale p{  
+  margin: 0px;
+  
+}

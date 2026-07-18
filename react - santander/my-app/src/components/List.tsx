@@ -1,4 +1,5 @@
 import React from "react";
+import TopSale from "./TopSale";
 
 const List = () => {
   const coffees = [
@@ -10,6 +11,7 @@ const List = () => {
   ];
 
   interface Cafe {
+    id: number;
     name: string;
     description: string;
     preparationTimes: number;
@@ -17,26 +19,31 @@ const List = () => {
 
   const cafes: Cafe[] = [
     {
+      id: 1,
       name: "Iced Caramel Macchiato",
       description: "Rico e com toque de baunilha",
       preparationTimes: 5,
     },
     {
+      id: 2,
       name: "Caffé Mocha",
       description: "um classico Strbuckes",
       preparationTimes: 5,
     },
     {
+      id: 3,
       name: "Starbucks Blond Vanilla Late",
       description: "Suave e aveludado",
       preparationTimes: 3,
     },
     {
+      id: 4,
       name: "Sparking Expresso",
       description: "Um toque brilhante",
       preparationTimes: 2,
     },
     {
+      id: 5,
       name: "Affogato",
       description: "o mais gostoso da terra",
       preparationTimes: 1,
@@ -45,10 +52,10 @@ const List = () => {
 
   const listItems = coffees.map((cafe) => <li key={cafe}> {cafe}</li>);
   const lista = cafes.map((cafee) => (
-    <div key={cafee.name}>
+    <div key={cafee.id}>
       {" "}
       <h5> {cafee.name}</h5>
-      <p style={{ fontSize: "10px", paddingBottom: '10px' }}>
+      <p style={{ fontSize: "10px", paddingBottom: "10px" }}>
         {cafee.description}{" "}
         <span style={{ fontWeight: "bold" }}>
           {" "}
@@ -58,27 +65,28 @@ const List = () => {
     </div>
   ));
 
-  const topSale = cafes.filter(
-    (cafe) => ['Sparking Expresso', 'Caffé Mocha'].includes(cafe.name)
+  const topSale = cafes.filter((cafe) =>
+    ["Sparking Expresso", "Caffé Mocha"].includes(cafe.name),
   );
-  const topTime = cafes.filter((cafe) => cafe.preparationTimes >= 3)
-  console.log('Top Vendas', topSale, 'Time' ,topTime);
+  const topTime = cafes.filter((cafe) => cafe.preparationTimes >= 3);
+  console.log("Top Vendas", topSale, "Time", topTime);
   return (
     <>
       <ul>
-          <h4 style={{textAlign: "left"}}>Mais vendidos</h4>
-          {topSale.map((top) => <li style={{textAlign: "left" , fontSize: "12px"}} key={top.name} > {top.name}</li>)}
+        <h4 style={{ textAlign: "left" }}>Mais vendidos</h4>
+        {topSale.map((top) => (
+          <TopSale key={top.id} name={top.name}  description={top.description}/>
+        ))}
       </ul>
       <br />
-
       <ul style={{ textAlign: "left" }}>
         <h4>Cafés</h4>
         {listItems}
         <br />
         <h4>Descrição</h4>
         {lista}
-        </ul>;
-        
+      </ul>
+      ;
     </>
   );
 };
