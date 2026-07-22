@@ -1,4 +1,4 @@
-import React from "react";
+
 import TopSale from "./TopSale";
 
 const List = () => {
