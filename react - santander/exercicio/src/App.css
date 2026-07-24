@@ -1,4 +1,10 @@
-ul{
-  
+ul {
   text-align: left;
+}
+.btn {
+  background-color: #646cff;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 1rem;
+  border-radius: 4px;
+  
 }
