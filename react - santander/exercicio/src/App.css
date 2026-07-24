@@ -6,5 +6,14 @@ ul {
   color: rgba(255, 255, 255, 0.85);
   margin: 0 1rem;
   border-radius: 4px;
-  
+  padding: 10px;
+}
+
+.dark-theme{  
+  background-color: rgb(1, 1, 58);
+  color: rgba(red, green, blue, .85);
+}
+.light-theme{ 
+  background-color: white;
+  color: #242424;
 }
