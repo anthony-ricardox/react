@@ -1,25 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Item from './items/Item'
+import "./App.css";
+import Item from "./items/Item";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const itemsList = [
+    { id: "meias", name: "Meias", check: true },
+    { id: "escova-de-dente", name: "Escova de dente", check: false },
+    { id: "carregador-celular", name: "Carregador de celular", check: false },
+    { id: "pasta-de-dente", name: "Pasta de dente", check: true },
+  ];
 
   return (
     <>
       <div className="list">
         <h1>Itens para colocar na mala</h1>
-        <Item name='Meias'/>
-        <Item name='Geladeira'/>
-        <Item name='Cama'/>
-        <Item name='Roupas'/>
-
+        {itemsList.map((item) => {
+          if(item.check){ 
+            return null;
+          }
+          return <Item name={item.name} check={item.check} key={item.id} />;
+        })}
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
