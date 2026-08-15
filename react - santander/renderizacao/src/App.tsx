@@ -17,7 +17,6 @@ function App() {
           if(item.check){ 
             return null;
           }
-          
           return <Item name={item.name} check={item.check} key={item.id} />;
         })}
       </div>
